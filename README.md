@@ -72,6 +72,8 @@ I find that *val_acc did not improve from 0.99922*, so I kill it
 
 1. run *test_averageCSV.py* : Generate *.csv* file
 
+   ![1558454997990](img/1558454997990.png)
+   
    ![1558449486650](img/1558449486650.png)
 
 ![1558444546942](img/1558444546942.png)
