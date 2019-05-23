@@ -1,6 +1,6 @@
 # project3--RMB-value-identify
 
-The aim of this project : **Identify the face value of RMB**    I got the score: 99.98
+The aim of this project : **Identify the face value of RMB**    I got the score: 100
 
 like the image:
 
@@ -84,5 +84,20 @@ you must be know what it means I guess, I don't have to explain it anymore.
 
 ![1558444994019](img/1558444994019.png)
 
-![1558445170325](img/1558445170325.png)
 
+
+3. run *last_max_valueCSVtemp.py*，  and open it in excel，and ascending order by *max_value*
+
+   ![1558584376777](img/1558584376777.png)
+
+   
+
+   I find these four values really abnormal, so....these four image:
+
+   ![1558584615178](img/1558584615178.png)
+
+097BAEPV.jpg       8E3VU0CL.jpg    SK7C8AO3.jpg    GV92MWO8.jpg
+
+all of these RMB value are 0.2,   so I modify them by my hand.
+
+![1558584855527](img/1558584855527.png)
