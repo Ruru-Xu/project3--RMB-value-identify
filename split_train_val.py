@@ -4,15 +4,12 @@ import shutil
 
 np.random.seed(2016)
 
-#root_train = '/Users/pengpai/Desktop/python/DeepLearning/Kaggle/NCFM/data/train_split'
-#root_val = '/Users/pengpai/Desktop/python/DeepLearning/Kaggle/NCFM/data/val_split'
+root_train = '/home/imc/XR/temp/MobileNetV3-Pytorch/datasets/RMB_data/train_split'
+root_val = '/home/imc/XR/temp/MobileNetV3-Pytorch/datasets/RMB_data/val_split'
 
-root_train = '/home/imc/XR/temp/MobileNetV3-Pytorch/datasets/cifar10_RMB/train_split'
-root_val = '/home/imc/XR/temp/MobileNetV3-Pytorch/datasets/cifar10_RMB/val_split'
+root_total = '/home/imc/XR/temp/MobileNetV3-Pytorch/datasets/RMB_data/train'
 
-root_total = '/home/imc/XR/temp/MobileNetV3-Pytorch/datasets/cifar10_RMB/train'
-
-FishNames = ['0.1','0.2','0.5','1','2','5','10','50','100']
+RMBlabels = ['0.1','0.2','0.5','1','2','5','10','50','100']
 
 nbr_train_samples = 0
 nbr_val_samples = 0
@@ -20,11 +17,11 @@ nbr_val_samples = 0
 # Training proportion
 split_proportion = 0.8
 
-for fish in FishNames:
-    if fish not in os.listdir(root_train):
-        os.mkdir(os.path.join(root_train, fish))
+for RMBlabel in RMBlabels:
+    if RMBlabel not in os.listdir(root_train):
+        os.mkdir(os.path.join(root_train, RMBlabel))
 
-    total_images = os.listdir(os.path.join(root_total, fish))
+    total_images = os.listdir(os.path.join(root_total, RMBlabel))
 
     nbr_train = int(len(total_images) * split_proportion)
 
@@ -35,17 +32,17 @@ for fish in FishNames:
     val_images = total_images[nbr_train:]
 
     for img in train_images:
-        source = os.path.join(root_total, fish, img)
-        target = os.path.join(root_train, fish, img)
+        source = os.path.join(root_total, RMBlabel, img)
+        target = os.path.join(root_train, RMBlabel, img)
         shutil.copy(source, target)
         nbr_train_samples += 1
 
-    if fish not in os.listdir(root_val):
-        os.mkdir(os.path.join(root_val, fish))
+    if RMBlabel not in os.listdir(root_val):
+        os.mkdir(os.path.join(root_val, RMBlabel))
 
     for img in val_images:
-        source = os.path.join(root_total, fish, img)
-        target = os.path.join(root_val, fish, img)
+        source = os.path.join(root_total, RMBlabel, img)
+        target = os.path.join(root_val, RMBlabel, img)
         shutil.copy(source, target)
         nbr_val_samples += 1
 
